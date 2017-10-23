@@ -303,7 +303,7 @@
                                     namePrefix: 'BBC micro:bit',
                                 }],
                                 optionalServices: ['e95d9882-251d-470a-a062-fa1922dfa9a8'], //BUTTONSERVICE_SERVICE_UUID
-                                optionalServices: ['e95dd91d-251d-470a-a062-fa1922dfa9a8']  //LEDSERVICE_SERVICE_UUID
+                                //optionalServices: ['e95dd91d-251d-470a-a062-fa1922dfa9a8']  //LEDSERVICE_SERVICE_UUID
                             })
                             .then(device => {
                                 console.log('Connecting to GATT Server...');
@@ -348,24 +348,7 @@
                             })
 
 
-                            // LED Services
-                            .then(server => {
-                                console.log('> Found GATT server');
-                                return gattServer.getPrimaryService('e95dd91d-251d-470a-a062-fa1922dfa9a8'); //LEDSERVICE_SERVICE_UUID
-                            })
-                            .then(service => {
-                                console.log('> Found LED command service');
-                                LEDcommandService = service;
-                                // Get write characteristic
-                                //return commandService.getCharacteristic('e95d7b77-251d-470a-a062-fa1922dfa9a8'); //LEDMATRIXSTATE_CHARACTERISTIC_UUID
-                                return LEDcommandService.getCharacteristic('e95d93ee-251d-470a-a062-fa1922dfa9a8'); //LEDMATRIXSTATE_CHARACTERISTIC_UUID
-                            })
-                            .then(characteristic => {
-                                console.log('> Found LED write characteristic');
-                                LEDCharacteristic = characteristic;
-                                progress.hidden = true;
-                            })
-
+                            
 
                             .catch(handleError);
                     } else {
