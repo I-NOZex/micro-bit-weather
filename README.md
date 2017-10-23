@@ -3,6 +3,7 @@ micro:bit Weather Information
 
 Let's create a weather information display with micro:bit, Google Sheets and Openweathermap.
 "31c - Clouds" - current temperature is 31 Celsius and partly cloudy.
+
 1.Get the current weather information from Openweathermap and register the "Current weather data" API.
 2.Create Google Sheets script to fetch the data from Openweathermap.
 3.Schedule a trigger to update the data every minute.
